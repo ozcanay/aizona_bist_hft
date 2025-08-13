@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "gtest",
+        "magic-enum",
+        "fmt",
+        "quill",
+        "nlohmann-json"
+    ]
+}

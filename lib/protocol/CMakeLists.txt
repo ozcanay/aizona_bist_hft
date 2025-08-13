@@ -1,0 +1,5 @@
+# add_subdirectory(glimpse)
+add_subdirectory(itch)
+add_subdirectory(moldudp64)
+add_subdirectory(ouch)
+add_subdirectory(soupbintcp)

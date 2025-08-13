@@ -1,0 +1,116 @@
+{
+    "market_data": {
+        "environments": {
+            "pre-prod": {
+                "equity": {
+                    "itch_multicast_ip": "233.113.216.65",
+                    "itch_multicast_interface_ip": "10.46.117.197",
+                    "rewinder_unicast_request_ip": "10.46.117.197",
+                    "rewinder_unicast_destination_ip": "194.0.142.71",
+                    "glimpse_destination_ip": "194.0.142.71",
+                    "partitions": [
+                        {
+                            "name": "Equity-1",
+                            "multicast_port": 21001,
+                            "unicast_request_port": 53300,
+                            "unicast_destination_port": 24001,
+                            "cpu": 1
+                        },
+                        {
+                            "name": "Equity-2",
+                            "multicast_port": 21002,
+                            "unicast_request_port": 53301,
+                            "unicast_destination_port": 24002,
+                            "cpu": 2
+                        },
+                        {
+                            "name": "Equity-3",
+                            "multicast_port": 21003,
+                            "unicast_request_port": 53302,
+                            "unicast_destination_port": 24003,
+                            "cpu": 3
+                        },
+                        {
+                            "name": "Equity-4",
+                            "multicast_port": 21004,
+                            "unicast_request_port": 53303,
+                            "unicast_destination_port": 24004,
+                            "cpu": 4
+                        }
+                    ]
+                },
+                "derivative": {
+                    "itch_multicast_ip": "233.113.216.65",
+                    "itch_multicast_interface_ip": "10.46.117.197",
+                    "rewinder_unicast_request_ip": "10.46.117.197",
+                    "rewinder_unicast_destination_ip": "194.0.142.74",
+                    "glimpse_destination_ip": "194.0.142.74",
+                    "partitions": [
+                        {
+                            "name": "Derivative-1",
+                            "multicast_port": 21101,
+                            "unicast_request_port": 53304,
+                            "unicast_destination_port": 24001,
+                            "cpu": 5
+                        },
+                        {
+                            "name": "Derivative-2",
+                            "multicast_port": 21102,
+                            "unicast_request_port": 53305,
+                            "unicast_destination_port": 24002,
+                            "cpu": 6
+                        },
+                        {
+                            "name": "Derivative-3",
+                            "multicast_port": 21103,
+                            "unicast_request_port": 53306,
+                            "unicast_destination_port": 24003,
+                            "cpu": 7
+                        },
+                        {
+                            "name": "Derivative-4",
+                            "multicast_port": 21104,
+                            "unicast_request_port": 53307,
+                            "unicast_destination_port": 24004,
+                            "cpu": 8
+                        },
+                        {
+                            "name": "Derivative-5",
+                            "multicast_port": 21105,
+                            "unicast_request_port": 53308,
+                            "unicast_destination_port": 24005,
+                            "cpu": 9
+                        },
+                        {
+                            "name": "Derivative-6",
+                            "multicast_port": 21106,
+                            "unicast_request_port": 53309,
+                            "unicast_destination_port": 24006,
+                            "cpu": 10
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "market_access": {
+        "environments": {
+            "pre-prod": {
+                "equity": {
+                    "name": "Equity",
+                    "ip": "194.0.142.71",
+                    "port": 18458,
+                    "username": "IYMEHY",
+                    "password": "47w0RtA!"
+                },
+                "derivative": {
+                    "name": "Derivative",
+                    "ip": "194.0.142.71",
+                    "port": 21047,
+                    "username": "IYMDM7",
+                    "password": "Test.1234"
+                }
+            }
+        }
+    }
+}

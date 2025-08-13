@@ -1,0 +1,16 @@
+/build*
+/.cache
+/.vscode/compile_commands.json
+/.vscode/.cache
+CMakeLists.txt.user
+*.swp
+*.out
+*.exe
+*.a
+*.so
+*.dll
+*.dylib
+*.pcap
+logs/
+cmake-build-debug/
+.idea
