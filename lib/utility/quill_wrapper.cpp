@@ -9,7 +9,7 @@
 // Additional global variables can be defined for additional loggers if needed.
 quill::Logger* global_logger_a;
 
-void setup_quill(char const* log_file)
+void setup_quill(char const* log_file, quill::LogLevel level = quill::LogLevel::Info)
 {
     // Start the backend thread
     quill::Backend::start();
@@ -32,4 +32,6 @@ void setup_quill(char const* log_file)
                                          "LOG_%(log_level:<9) %(logger:<12) %(message)",
             "%H:%M:%S.%Qns",
             quill::Timezone::GmtTime });
+
+    global_logger_a->set_log_level(level);
 }

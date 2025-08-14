@@ -5,6 +5,7 @@
         "fmt",
         "quill",
         "nlohmann-json",
-        "benchmark"
+        "benchmark",
+        "libpcap"
     ]
 }

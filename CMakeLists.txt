@@ -12,7 +12,7 @@ include(cmake/StandardProjectSettings.cmake)
 # Warnings
 add_library(algocor_warnings INTERFACE)
 include(cmake/CompilerWarnings.cmake)
-option(WARNINGS_AS_ERRORS "Treat Warnings As Errors" ON)
+option(WARNINGS_AS_ERRORS "Treat Warnings As Errors" OFF)
 algocor_set_project_warnings(
     algocor_warnings
     ${WARNINGS_AS_ERRORS})

@@ -21,7 +21,7 @@
 #pragma clang diagnostic ignored "-Wtypecheck-expression-not-modifiable-lvalue"
 #endif
 
-#include "quill/Logger.h"
+#include <quill/Logger.h>
 
 #ifdef __clang__
 #pragma clang diagnostic pop

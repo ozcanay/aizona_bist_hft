@@ -1,3 +1,5 @@
 #pragma once
 
-void setup_quill(char const* log_file);
+#include <quill/Logger.h>
+
+void setup_quill(char const* log_file, quill::LogLevel level);

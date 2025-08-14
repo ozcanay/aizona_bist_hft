@@ -31,3 +31,7 @@
 - Everything you need to know about memory -> ulrich drepper
 - denis bakhalov book
 - https://travisdowns.github.io/blog/2020/08/19/icl-avx512-freq.html
+
+## prereq:
+
+pip install scapy
