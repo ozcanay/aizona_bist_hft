@@ -4,6 +4,7 @@
         "magic-enum",
         "fmt",
         "quill",
-        "nlohmann-json"
+        "nlohmann-json",
+        "benchmark"
     ]
 }

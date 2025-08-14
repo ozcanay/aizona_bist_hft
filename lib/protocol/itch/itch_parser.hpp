@@ -4,12 +4,7 @@
 #include <map>
 #include <unordered_map>
 
-#include "core/l2_orderbook.hpp"
-
-namespace algocor
-{
-class MarketDataClient;
-}
+#include "../../core/l2_orderbook.hpp"
 
 namespace algocor::protocol::itch
 {
@@ -23,12 +18,13 @@ struct ItchOrder {
 };
 
 class ItchParser {
-    class MarketDataClient& m_marketDataClient;
+    // class MarketDataClient& m_marketDataClient;
     std::unordered_map<uint32_t, L2Orderbook> m_orderbookMap;              // TODO: Optimize
     std::map<std::tuple<uint32_t, uint64_t, char>, ItchOrder> m_orderMap;  // TODO: Optimize
 
 public:
-    explicit ItchParser(class MarketDataClient& marketDataClient);
+    // explicit ItchParser(class MarketDataClient& marketDataClient);
+    explicit ItchParser();
 
     void handleOrderAdd(const struct AddOrder* order_add);
     void handleOrderDelete(const struct OrderDelete* order_delete);

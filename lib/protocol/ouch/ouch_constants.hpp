@@ -1,6 +1,6 @@
 #pragma once
 
-// #include "protocol/soupbintcp/types.hpp"
+#include "../soupbintcp/soupbintcp_types.hpp"
 
 namespace algocor
 {
@@ -39,10 +39,10 @@ inline static constexpr int PASSWORD_LENGTH = 10;
 inline static constexpr int SESSION_NAME_LENGTH = 10;
 inline static constexpr int REQUESTED_SEQUENCE_NUMBER_LENGTH = 20;
 
-// inline static constexpr int LOGIN_REQUEST_PACKET_LENGTH
-//     = sizeof(PacketType) + USERNAME_LENGTH + PASSWORD_LENGTH + SESSION_NAME_LENGTH + REQUESTED_SEQUENCE_NUMBER_LENGTH;
+inline static constexpr int LOGIN_REQUEST_PACKET_LENGTH
+    = sizeof(PacketType) + USERNAME_LENGTH + PASSWORD_LENGTH + SESSION_NAME_LENGTH + REQUESTED_SEQUENCE_NUMBER_LENGTH;
 
-// // NOLINTNEXTLINE(cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers)
-// static_assert(LOGIN_REQUEST_PACKET_LENGTH == 47);
+// NOLINTNEXTLINE(cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers)
+static_assert(LOGIN_REQUEST_PACKET_LENGTH == 47);
 
 }  // namespace algocor

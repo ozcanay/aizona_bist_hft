@@ -1,5 +1,5 @@
 add_executable(AYDIN trading_client.cpp)
-target_link_libraries(AYDIN PRIVATE itch_protocol)  # This is crucial!
+target_link_libraries(AYDIN PRIVATE aizona_itch)  # This is crucial!
 
 get_target_property(AYDIN_INCLUDE_DIRS AYDIN INCLUDE_DIRECTORIES)
 get_target_property(AYDIN_LINK_LIBS AYDIN LINK_LIBRARIES)
