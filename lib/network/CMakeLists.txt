@@ -1,4 +1,13 @@
-add_library(aizona_network STATIC tcp_client.cpp tcp_socket.cpp udp_socket.cpp)
+add_library(
+    aizona_network 
+    STATIC 
+    tcp_client.cpp 
+    tcp_socket.cpp 
+    udp_socket.cpp 
+    tcp_client_connection.cpp 
+    tcp_server_socket.cpp 
+    tcp_server.cpp
+)
 
 # Link required dependencies
 target_link_libraries(aizona_network PUBLIC

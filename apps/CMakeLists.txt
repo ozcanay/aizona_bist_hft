@@ -1,0 +1,5 @@
+add_executable(client trading_client.cpp)
+target_link_libraries(client PRIVATE aizona_itch aizona_client aizona_utility)
+
+add_executable(emulator_server exchange_emulator.cpp)
+target_link_libraries(emulator_server PRIVATE aizona_itch aizona_client aizona_utility aizona_network)

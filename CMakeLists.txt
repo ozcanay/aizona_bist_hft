@@ -46,7 +46,7 @@ if(algocor_ENABLE_CPPCHECK)
     algocor_enable_cppcheck(${WARNINGS_AS_ERRORS})
 endif()
 
-add_subdirectory(src)
+add_subdirectory(apps)
 add_subdirectory(lib)
 add_subdirectory(test)
 add_subdirectory(benchmark)

@@ -44,25 +44,6 @@ public:
         return m_session;
     }
 
-private:
-    void handleOrderAdd(const AddOrder* order_add)
-    {
-        if (m_builder)
-            m_builder->addOrder(*order_add);
-    }
-
-    void handleOrderExecution(const OrderExecuted* order_executed)
-    {
-        if (m_builder)
-            m_builder->executeOrder(*order_executed);
-    }
-
-    void handleOrderDelete(const OrderDelete* order_delete)
-    {
-        if (m_builder)
-            m_builder->deleteOrder(*order_delete);
-    }
-
     void parsePayload(const char* payload, uint16_t message_count, uint64_t sequence_number)
     {
         uint32_t offset = 0;
@@ -84,6 +65,25 @@ private:
                     break;  // other types ignored
             }
         }
+    }
+
+private:
+    void handleOrderAdd(const AddOrder* order_add)
+    {
+        if (m_builder)
+            m_builder->addOrder(*order_add);
+    }
+
+    void handleOrderExecution(const OrderExecuted* order_executed)
+    {
+        if (m_builder)
+            m_builder->executeOrder(*order_executed);
+    }
+
+    void handleOrderDelete(const OrderDelete* order_delete)
+    {
+        if (m_builder)
+            m_builder->deleteOrder(*order_delete);
     }
 
     // Helper

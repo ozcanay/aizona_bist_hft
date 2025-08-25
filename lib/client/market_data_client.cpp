@@ -49,7 +49,7 @@ namespace algocor
 {
 
 MarketDataClient::MarketDataClient(const MarketDataPartitionConfig& config)
-    : m_itchParser(*this)
+    : m_itchParser(m_builder)
     , m_config(config)
     , m_multicastSocket(*this,
           config.multicast_ip,

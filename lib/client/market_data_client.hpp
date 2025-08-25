@@ -11,16 +11,12 @@
 #include "../utility/config_parser.hpp"
 #include "../utility/overwrite_macros.hpp"
 
+#include "../core/orderbook_builder.hpp"
 #include "../protocol/itch/itch_parser.hpp"
 
 // TODO: ADD A CODE TO SANITY CHECK THAT ALL SEQUENCE NUMBERS UP TO THIS POINT ARE RECEIVED. ENABLE THIS ONLY FOR DEBUG BUILDS.
 namespace algocor
 {
-
-namespace protocol::itch
-{
-class ItchParser;
-}
 
 namespace protocol::moldudp64
 {
@@ -46,7 +42,8 @@ public:
     [[nodiscard]] MarketDataPartitionConfig getPartitionConfig() const;
 
 private:
-    protocol::itch::ItchParser m_itchParser;
+    protocol::itch::ConcreteOrderbookBuilder m_builder;
+    protocol::itch::ItchParser<protocol::itch::ConcreteOrderbookBuilder> m_itchParser;
     MarketDataPartitionConfig m_config;
     UdpMulticastSocket m_multicastSocket;
     // UdpUnicastSocket m_rewinderSocket;
@@ -78,7 +75,7 @@ private:
     void rewind(const RewindRequest& rewind_request);
     void processRewoundPackets(const struct protocol::moldudp64::DownstreamHeader& header);
 
-    friend class ::algocor::protocol::itch::ItchParser;
+    friend class ::algocor::protocol::itch::ItchParser<protocol::itch::ConcreteOrderbookBuilder>;
     friend class UdpMulticastSocket;
 };
 

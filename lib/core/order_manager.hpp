@@ -40,7 +40,7 @@ namespace algocor
 {
 
 // this might need approximation
-static constexpr size_t ORDERS_SIZE = 1 << 20;  // 1'048'576
+static constexpr size_t ORDERS_SIZE = 1 << 10;  // 1'048'576
 
 // TODO: is this the ideal structure. do I need to pack it, do I need to rearrange fields?
 struct Order {
@@ -221,7 +221,8 @@ public:
     }
 
 private:
-    alignas(64) std::array<Order, ORDERS_SIZE> m_orders {};
+    // I needed ulimit -s unlimited to circumvent stack overflow problem.
+    alignas(64) std::array<Order, ORDERS_SIZE> m_orders {};  // TODO: this is too large for stack allocation. This has to be fixed!
     std::array<char, 14> m_token {};
     // size_t m_index = 0;
 

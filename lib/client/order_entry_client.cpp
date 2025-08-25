@@ -57,15 +57,15 @@ BistMarketAccessor::BistMarketAccessor(OrderEntryPartitionConfig partition,
     , m_tcpClient(*this, m_partition.ip, m_partition.port)
     , m_orderManager(last_order_token_index)
 {
+    prepareEnterOrderBuffer();
+    prepareReplaceOrderBuffer();
+    prepareCancelOrderBuffer();
+
     m_tcpClientThread = std::thread([this]() { m_tcpClient.startRead(); });
     LOG_INFO("Constructing OUCH client for partition: {}, client account: {}, exchange info: {}",
         m_partitionDefinition,
         m_clientAccount,
         m_exchangeInfo);
-
-    prepareEnterOrderBuffer();
-    prepareReplaceOrderBuffer();
-    prepareCancelOrderBuffer();
 }
 
 BistMarketAccessor::~BistMarketAccessor()
